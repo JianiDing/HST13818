@@ -54,7 +54,7 @@ def surfacebrightness(centerx,centery,radius,data,error):
     index = []
     radii = []
     imgerror = []
-    #print (r)
+
     #calculating the surface brightess profile
     for i in np.arange(0,radius,1):
         xi = xx[np.where((r > i) & (r <= i+1))]
@@ -96,15 +96,13 @@ plt.scatter(40,39,c='r', marker = "*",s=5)
 e.set_clip_box(plt.subplot(6,3,1).bbox)
 e.set_alpha(0.1)
 plt.subplot(6,3,1).add_artist(e)
-#plt.scatter(25,10)
+
 plt.plot(circle(40,39)[0],circle(40,39)[1],linestyle='--',c='green')
 plt.plot(circle(40,39)[0],circle(40,39)[2],linestyle='--',c='green')
 plt.title('Original Image',fontsize='10')
 plt.imshow(img,cmap='Greys',origin='lower')
-#cs = plt.contourf(img,10,cmap=plt.cm.bwr)
-#cs.cmap.set_under('red')
-#cs.cmap.set_over('blue')
-#plt.colorbar(cs)
+
+
 plt.show()
 
 plt.subplot(6,3,2)
@@ -116,9 +114,7 @@ plt.yticks(np.arange(0, 30, 5),round(0.03*8.27,2)*np.arange(0, 30, 5), fontsize=
 plt.title('Contour of the Gaussian Fitting Model',fontsize='10')
 cs2 = plt.contour(img2,12,cmap='OrRd')
 plt.imshow(img2,cmap='binary',origin='lower')
-#plt.colorbar(cs2)
 
-#plt.text(10,50,r'Some Text')
 plt.subplot(6,3,3)
 plt.xlabel(r'$\rm{kpc}$',fontsize='12')
 plt.ylabel(r'$\rm{kpc}$',fontsize='12')
@@ -128,7 +124,7 @@ plt.title('Residual of the Gaussian Fitting Model',fontsize='10')
 cs3 = plt.contour(img3,12,cmap='OrRd')
 plt.title('Contour of the Sersic Fitting Model',fontsize='10')
 plt.imshow(img3,cmap='binary',origin='lower')
-#plt.colorbar(cs3)
+
 
 plt.subplot(6,3,4)
 
